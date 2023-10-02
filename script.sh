@@ -10,4 +10,4 @@ else #se o serviço não estiver online, ele prossegue para esse passo
     MENSAGEM="OFFLINE" #Se o serviço estiver inativo, a variável MENSAGEM é definida como "OFFLINE".
 fi
 
-echo "$DATA_HORA $NOME_SERVICO Status: $MENSAGEM" > /srv/share/isadora/resultado_${MENSAGEM}.txt #mprime uma mensagem que inclui a data e hora, o nome do serviço e seu status (online ou offline). A mensagem é redirecionada para um arquivo de texto localizado em "/srv/share/isadora/resultado_${MENSAGEM}.txt". O nome do arquivo será "resultado_ONLINE.txt" se o serviço estiver online e "resultado_OFFLINE.txt" se o serviço estiver offline.
+echo "$DATA_HORA $NOME_SERVICO Status: $MENSAGEM" >> /srv/share/isadora/resultado_${MENSAGEM}.txt #mprime uma mensagem que inclui a data e hora, o nome do serviço e seu status (online ou offline). A mensagem é redirecionada para um arquivo de texto localizado em "/srv/share/isadora/resultado_${MENSAGEM}.txt". O nome do arquivo será "resultado_ONLINE.txt" se o serviço estiver online e "resultado_OFFLINE.txt" se o serviço estiver offline.
