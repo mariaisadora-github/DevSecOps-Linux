@@ -38,13 +38,38 @@ Atividade de Linux da trilha DevSecOps
       5. Clique em "Save rules" para aplicar as alterações.
 
 ## Requisitos no Linux
+Para entrar na instância foi usado o terminal do ubuntu com o seguinte comando: ssh -i chave-atividade.pem ec2-user@[IP_PUBLICO]
 
-- [ ] Configurar o NFS entregue.
-- [ ] Criar um diretório dentro do filesystem do NFS com seu nome.
-- [ ] Subir um Apache no servidor - o Apache deve estar online e rodando.
-- [ ] Criar um script que valide se o serviço está online e envie o resultado da validação para o seu diretório no NFS.
-- [ ] O script deve conter: Data HORA + nome do serviço + Status + mensagem personalizada de ONLINE ou offline.
-- [ ] O script deve gerar 2 arquivos de saída: 1 para o serviço online e 1 para o serviço OFFLINE.
+- [X] Configurar o NFS entregue.
+      
+      1. sudo yum install nfs-utils - comando utilizado para entrar instalar o nfs na instância, na minha intância já veio instalado.
+      2. sudo systemctl status nfs-server - comando para verificar o status do nfs.
+      3. sudo systemctl start nfs-server - comando para iniciar o nfs.
+      4. sudo systemctl enable nfs-server - comando para habilitar o serviço nfs e configurá-lo para ser iniciado automaticamente durante o processo de inicialização do             sistema.
+      5. sudo mkdir /srv/share - comando para criar o diretório chamado "share" no sistema de arquivos do Linux, especificamente no diretório "/srv".
+      6. sudo chown nfsnobody:nfsnobody /srv/share - comando que configura o diretório "/srv/share" para que o usuário e grupo "nfsnobody" sejam os proprietários.
+      7. sudo nano /etc/exports - comando para entrar e editar o arquivo exports.
+      8. /srv/share [IP_SUBNET](rw,all_squash) - comando que vai definir as configurações de compartilhamento para o diretório /srv/share.
+      9. sudo exports -rva - comando que atualiza as configurações de compartilhamento nfs no servidor e aplicando qualquer alteração feita no arquivo /etc/exports sem a           necessidade de reiniciar o serviço NFS.
+      
+- [X] Criar um diretório dentro do filesystem do NFS com seu nome.
+
+      1. cd /srv/share - comando para entrar no diretório.
+      2. sudo mkdir isadora - comando para criar o diretório isadora no diretório que entramos anteriormente
+      3. sudo chmod 777 isadora - comando para atribuir permissões de leitura, gravação e execução ao diretório.
+
+- [X] Subir um Apache no servidor - o Apache deve estar online e rodando.
+
+      1. sudo yum update - comando para atualizar os pacotes do sistema operacional.
+      2. sudo yum install http - comando para instalar o apache.
+      3. sudo systemctl start httpd - comando para iniciar o apache.
+      4. sudo systemctl enable httpd - comando para habilitar que o apache seja iniciado automaticamente quando a instância for inicializada.
+      5. sudo systemctl status httpd - comando para verificar o status do apache.
+
+- [ ] Criar um script que valide se o serviço está online e envie o resultado da validação para o seu diretório no NFS, o script deve conter: Data HORA + nome do serviço + Status + mensagem personalizada de ONLINE ou offline. O script deve gerar 2 arquivos de saída: 1 para o serviço online e 1 para o serviço OFFLINE.
+
+      1. O script feito está no repostiório.
+      
 - [ ] Preparar a execução automatizada do script a cada 5 minutos.
 - [ ] Fazer o versionamento da atividade.
 - [ ] Fazer a documentação explicando o processo de instalação do Linux.
