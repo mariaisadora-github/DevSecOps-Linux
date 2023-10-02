@@ -72,6 +72,6 @@ Para entrar na instância foi usado o terminal do ubuntu com o seguinte comando:
       
 - [X] Preparar a execução automatizada do script a cada 5 minutos.
 
-      1.  crontab -e - comando para editar as tarefas cron, que são agendamentos de tarefas que executam comandos ou scripts em momentos específicos ou em intervalos regulares.
-      2. No arquivo adiciona a segunte linha: */5 * * * * /srv/share/validacao_apache.sh
+      1. crontab -e - comando para editar as tarefas cron, que são agendamentos de tarefas que executam comandos ou scripts em momentos específicos ou em intervalos regulares.
+      2. No arquivo adiciona a segunte linha: */5 * * * * /srv/share/validacao_apache.sh, após salvar, o script vai rodar a cada 5 minutos.
   
