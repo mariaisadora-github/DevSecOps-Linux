@@ -51,6 +51,8 @@ Para entrar na instância foi usado o terminal do ubuntu com o seguinte comando:
       7. sudo nano /etc/exports - comando para entrar e editar o arquivo exports.
       8. /srv/share [IP_SUBNET](rw,all_squash) - comando que vai definir as configurações de compartilhamento para o diretório /srv/share.
       9. sudo exports -rva - comando que atualiza as configurações de compartilhamento nfs no servidor e aplicando qualquer alteração feita no arquivo /etc/exports sem a           necessidade de reiniciar o serviço NFS.
+
+      ![Imagem referente a pasta /srv/share](/imagens/pastassrvshare.png)
       
 - [X] Criar um diretório dentro do filesystem do NFS com seu nome.
 
