@@ -52,13 +52,15 @@ Para entrar na instância foi usado o terminal do ubuntu com o seguinte comando:
       8. /srv/share [IP_SUBNET](rw,all_squash) - comando que vai definir as configurações de compartilhamento para o diretório /srv/share.
       9. sudo exports -rva - comando que atualiza as configurações de compartilhamento nfs no servidor e aplicando qualquer alteração feita no arquivo /etc/exports sem a           necessidade de reiniciar o serviço NFS.
 
-      ![Imagem referente a pasta /srv/share](/imagens/pastassrvshare.png)
+![Imagem referente a pasta /srv/share](/imagens/pastassrvshare.png)
       
 - [X] Criar um diretório dentro do filesystem do NFS com seu nome.
 
       1. cd /srv/share - comando para entrar no diretório.
       2. sudo mkdir isadora - comando para criar o diretório isadora no diretório que entramos anteriormente
       3. sudo chmod 777 isadora - comando para atribuir permissões de leitura, gravação e execução ao diretório.
+
+![Imagem referente a criação do diretório com meu nome e parte do que ocorre quando o script é executado](/imagens/pastaisadora.png)
 
 - [X] Subir um Apache no servidor - o Apache deve estar online e rodando.
 
@@ -71,7 +73,11 @@ Para entrar na instância foi usado o terminal do ubuntu com o seguinte comando:
 - [X] Criar um script que valide se o serviço está online e envie o resultado da validação para o seu diretório no NFS, o script deve conter: Data HORA + nome do serviço + Status + mensagem personalizada de ONLINE ou offline. O script deve gerar 2 arquivos de saída: 1 para o serviço online e 1 para o serviço OFFLINE.
 
       1. O script feito está no repositório.
-      
+
+![Imagem referente ao script](/imagens/online.png)
+
+![Imagem referente ao script](/imagens/offline.png)
+
 - [X] Preparar a execução automatizada do script a cada 5 minutos.
 
       1. crontab -e - comando para editar as tarefas cron, que são agendamentos de tarefas que executam comandos ou scripts em momentos específicos ou em intervalos regulares.
