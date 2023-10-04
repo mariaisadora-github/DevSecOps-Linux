@@ -87,7 +87,7 @@ Para entrar na instância foi usado o terminal do ubuntu com o seguinte comando:
   
 ![Imagem referente ao crontab](/imagens/crontab.png)
 
-#Teste
+# Teste
 
 - Para testar foi realizado os seguintes passos:
 
@@ -97,3 +97,4 @@ Para entrar na instância foi usado o terminal do ubuntu com o seguinte comando:
       3. Como estava inativo, foi dado o comando "sudo systemctl start nfs-server" e "sudo systemctl enable nfs-server", para ativar o nfs e para sempre que a instância           for inicializada o nfs seja iniciado, respectivamente.
       4. Para realizar o compartilhamento de arquivos entre as máquinas foi dado o comando "sudo mount -t nfs [IP_PRIVADO_SERVER]:/srv/share/isadora /mnt", o comando             mount permite montar dispositivos ou sistemas de arquivos no Linux.
   
+![Imagem referente ao teste](/imagens/client.png)
