@@ -80,6 +80,8 @@ Para entrar na instância foi usado o terminal do ubuntu com o seguinte comando:
 
 ![Imagem referente ao script](/imagens/offline.png)
 
+  1. Para que o horário ficasse certo foi dado o comando "sudo timedatectl set-timezone America/Fortaleza", adequando o horário ao de Fortaleza.
+
 #### Preparar a execução automatizada do script a cada 5 minutos.
 
  1. crontab -e - comando para editar as tarefas cron, que são agendamentos de tarefas que executam comandos ou scripts em momentos específicos ou em intervalos regulares.
