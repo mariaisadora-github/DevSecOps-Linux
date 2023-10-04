@@ -82,7 +82,18 @@ Para entrar na instância foi usado o terminal do ubuntu com o seguinte comando:
 
 - [X] Preparar a execução automatizada do script a cada 5 minutos.
 
-      1. crontab -e - comando para editar as tarefas cron, que são agendamentos de tarefas que executam comandos ou scripts em momentos específicos ou em intervalos regulares.
+      1. crontab -e - comando para editar as tarefas cron, que são agendamentos de tarefas que executam comandos ou scripts em momentos específicos ou em intervalos               regulares.
       2. No arquivo adiciona a segunte linha: */5 * * * * /srv/share/validacao_apache.sh, após salvar, o script vai rodar a cada 5 minutos.
   
 ![Imagem referente ao crontab](/imagens/crontab.png)
+
+#Teste
+
+- Para testar foi realizado os seguintes passos:
+
+
+      1. Foi criado uma máquina virtual no serviço EC2, utilizei a mesma chave e o mesmo grupo de segurança, só verifiquei se a máquina cliente e a servidor estavam na            mesma sub-rede.
+      2. Foi dado o comando "sudo systemctl status nfs-server" para verificar se o nfs estava ativo ou não.
+      3. Como estava inativo, foi dado o comando "sudo systemctl start nfs-server" e "sudo systemctl enable nfs-server", para ativar o nfs e para sempre que a instância           for inicializada o nfs seja iniciado, respectivamente.
+      4. Para realizar o compartilhamento de arquivos entre as máquinas foi dado o comando "sudo mount -t nfs [IP_PRIVADO_SERVER]:/srv/share/isadora /mnt", o comando             mount permite montar dispositivos ou sistemas de arquivos no Linux.
+  
