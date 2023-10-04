@@ -70,6 +70,8 @@ Para entrar na instância foi usado o terminal do ubuntu com o seguinte comando:
       4. sudo systemctl enable httpd - comando para habilitar que o apache seja iniciado automaticamente quando a instância for inicializada.
       5. sudo systemctl status httpd - comando para verificar o status do apache.
 
+![Imagem referente ao status do apache](/imagens/apache.png)
+
 - [X] Criar um script que valide se o serviço está online e envie o resultado da validação para o seu diretório no NFS, o script deve conter: Data HORA + nome do serviço + Status + mensagem personalizada de ONLINE ou offline. O script deve gerar 2 arquivos de saída: 1 para o serviço online e 1 para o serviço OFFLINE.
 
       1. O script feito está no repositório.
@@ -83,3 +85,4 @@ Para entrar na instância foi usado o terminal do ubuntu com o seguinte comando:
       1. crontab -e - comando para editar as tarefas cron, que são agendamentos de tarefas que executam comandos ou scripts em momentos específicos ou em intervalos regulares.
       2. No arquivo adiciona a segunte linha: */5 * * * * /srv/share/validacao_apache.sh, após salvar, o script vai rodar a cada 5 minutos.
   
+![Imagem referente ao crontab](/imagens/crontab.png)
